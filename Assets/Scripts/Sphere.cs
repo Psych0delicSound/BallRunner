@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -24,8 +23,8 @@ public class Sphere: MonoBehaviour
     public void MoveSphere(float velocitySwipe)
     {   
         rb.AddForce(velocitySwipe * Time.deltaTime,
-            -10 * speed / (1 + Math.Abs(rb.velocity.y)),
-            20 * speed / (1 + Math.Abs(rb.velocity.z)));
+            -10 * speed / (1 + Math.Abs(rb.linearVelocity.y)),
+            20 * speed / (1 + Math.Abs(rb.linearVelocity.z)));
     }
 
     void OnCollisionEnter(Collision col)
